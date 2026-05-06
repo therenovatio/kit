@@ -1,0 +1,15 @@
+{
+    "extends": [
+        "@tsconfig/node22/tsconfig.json",
+        "@tsconfig/strictest/tsconfig.json"
+    ],
+    "compilerOptions": {
+        "lib": ["ES2024", "ESNext.Array", "ESNext.Collection", "DOM"],
+        "outDir": "dist",
+        "declaration": true,
+        "noUnusedLocals": false,
+        "sourceMap": true
+    },
+    "include": ["src"],
+    "exclude": ["node_modules"]
+}

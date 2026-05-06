@@ -1,0 +1,36 @@
+{
+    "name": "@dedust/kit",
+    "version": "0.0.2",
+    "keywords": [
+        "dedust",
+        "kit",
+        "defi"
+    ],
+    "license": "Apache-2.0",
+    "scripts": {
+        "build": "tsc",
+        "fmt:check": "prettier . --check",
+        "fmt": "prettier . --write",
+        "blueprint": "blueprint"
+    },
+    "files": [
+        "dist"
+    ],
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "peerDependencies": {
+        "@ton/core": ">=0.62.0"
+    },
+    "devDependencies": {
+        "@ton/core": "^0.62.0",
+        "@ton/ton": "^16.1.0",
+        "@tonconnect/sdk": "3.4.0-beta.4",
+        "@tsconfig/node22": "^22.0.5",
+        "@tsconfig/strictest": "^2.0.8",
+        "@types/node": "^25.0.3",
+        "axios": "1.15.2",
+        "prettier": "^3.7.4",
+        "tsx": "^4.21.0",
+        "typescript": "^5.9.3"
+    }
+}
