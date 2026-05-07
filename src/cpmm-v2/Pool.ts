@@ -48,34 +48,11 @@ export interface PoolData {
     rewards: Map<number, PoolReward>;
 }
 
-export const POOL_CODE_R1 =
-    0x87b566c019a1c6fc691dcc5042559368db755428ef8e0f45eb23ade0118c4c36n;
-export const POOL_CODE_R2 =
-    0x87b566c019a1c6fc691dcc5042559368db755428ef8e0f45eb23ade0118c4c36n;
-
-export class Pool implements Contract {
+export abstract class Pool implements Contract {
     protected constructor(
         readonly address: Address,
         readonly init?: StateInit,
     ) {}
-
-    static fromAddress(poolAddress: Address): Pool {
-        return new Pool(poolAddress);
-    }
-
-    static fromConfig(config: PoolConfig): Pool {
-        const init: StateInit = {
-            code: beginCell()
-                .storeUint(CellType.Library, 8)
-                .storeUint(POOL_CODE_R2, 256)
-                .endCell({ exotic: true }),
-            data: PoolStorage.createCell({
-                config,
-            }),
-        };
-
-        return new Pool(contractAddress(0, init), init);
-    }
 
     async getFullState(provider: ContractProvider) {
         const state = await provider.getState();
