@@ -1,6 +1,6 @@
 import { createTonConnectSender, useTonConnect } from '../ton-connect';
 import { createTonClient } from '../common/createTonClient';
-import { calculateClaimablePositionFees, Pool } from '../../src/cpmm-v2';
+import { calculateClaimablePositionFees, PoolV2 } from '../../src/cpmm-v2';
 import { Address } from '@ton/core';
 import { CHAIN } from '@tonconnect/sdk';
 import { delay } from '../common/delay';
@@ -16,7 +16,7 @@ export async function main() {
     );
 
     const pool = tonClient.open(
-        Pool.fromAddress(
+        PoolV2.fromAddress(
             Address.parse('kQC0P405i6zlJF_dmzGD46FdL6J_EUt_beUrTOzQDKgIGACP'),
         ),
     );

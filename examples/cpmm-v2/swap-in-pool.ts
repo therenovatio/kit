@@ -2,7 +2,7 @@ import { Address, type Sender, type SenderArguments, toNano } from '@ton/core';
 import axios from 'axios';
 import { JettonRoot } from '../../src/jettons';
 import {
-    Pool,
+    PoolV2,
     SwapPayload,
     PayJetton,
     SwapStep,
@@ -74,7 +74,7 @@ async function main() {
     const tonClient = createTonClient();
 
     const pool = tonClient.open(
-        Pool.fromAddress(
+        PoolV2.fromAddress(
             Address.parse('EQCyh-Vru-56OnpeweLQyTsTm5B2z_3CWZtgqADJXwGdW3_y'),
         ),
     );

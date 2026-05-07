@@ -1,6 +1,6 @@
 import { createTonConnectSender, useTonConnect } from '../ton-connect';
 import { createTonClient } from '../common/createTonClient';
-import { DepositPayload, ExtendedPayoutConfig, Pool } from '../../src/cpmm-v2';
+import { DepositPayload, ExtendedPayoutConfig, PoolV2 } from '../../src/cpmm-v2';
 import { Address, toNano } from '@ton/core';
 import { CHAIN } from '@tonconnect/sdk';
 
@@ -10,7 +10,7 @@ export async function main() {
     const tonClient = createTonClient();
 
     const pool = tonClient.open(
-        Pool.fromAddress(
+        PoolV2.fromAddress(
             Address.parse('kQC0P405i6zlJF_dmzGD46FdL6J_EUt_beUrTOzQDKgIGACP'),
         ),
     );

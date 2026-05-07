@@ -4,7 +4,7 @@ import {
     DepositPayload,
     ExtendedPayoutConfig,
     PayJetton,
-    Pool,
+    PoolV2,
 } from '../../src/cpmm-v2';
 import { Address, beginCell, toNano } from '@ton/core';
 import { JettonRoot } from '../../src/jettons';
@@ -16,7 +16,7 @@ export async function main() {
     const tonClient = createTonClient();
 
     const pool = tonClient.open(
-        Pool.fromAddress(
+        PoolV2.fromAddress(
             Address.parse('kQC0P405i6zlJF_dmzGD46FdL6J_EUt_beUrTOzQDKgIGACP'),
         ),
     );

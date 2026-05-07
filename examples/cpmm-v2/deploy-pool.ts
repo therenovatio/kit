@@ -1,4 +1,4 @@
-import { Asset, FeeIn, Pool, PoolConfig } from '../../src/cpmm-v2';
+import { Asset, FeeIn, PoolV2, PoolConfig } from '../../src/cpmm-v2';
 import { Address } from '@ton/core';
 import { createTonConnectSender, useTonConnect } from '../ton-connect';
 import { createTonClient } from '../common/createTonClient';
@@ -13,7 +13,7 @@ async function main() {
     );
 
     const pool = tonClient.open(
-        Pool.fromConfig(
+        PoolV2.fromConfig(
             PoolConfig.create({
                 assetX: Asset.native(),
                 assetY: Asset.jetton(usdt),

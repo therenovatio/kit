@@ -1,6 +1,6 @@
 import { Address } from '@ton/core';
 import { createTonClient } from '../common/createTonClient';
-import { Pool } from '../../src/cpmm-v2';
+import { PoolV2 } from '../../src/cpmm-v2';
 import { createTonConnectSender, useTonConnect } from '../ton-connect';
 import { delay } from '../common/delay';
 
@@ -10,7 +10,7 @@ export async function main() {
     const sender = createTonConnectSender(tonConnect);
 
     const pool = tonClient.open(
-        Pool.fromAddress(
+        PoolV2.fromAddress(
             Address.parse('kQC0P405i6zlJF_dmzGD46FdL6J_EUt_beUrTOzQDKgIGACP'),
         ),
     );
